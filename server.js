@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-//mongoose.connect('mongodb://' + process.env.DBUSERNAME + ':' + process.env.DBPASSWORD + '@ds139921.mlab.com:39921/heroku_sr9tsv0j');
 mongoose.connect('mongodb+srv://movie:yihaoyang123@cluster0.vgpef.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 
 
@@ -15,8 +14,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 const CLIENT_URL = "http://localhost:3000";
-//const CLIENT_URL = "https://themovienetwork.herokuapp.com";
-
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", CLIENT_URL);
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
